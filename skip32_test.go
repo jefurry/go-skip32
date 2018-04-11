@@ -31,13 +31,13 @@ func TestObfus(t *testing.T) {
 
 	m := uint32(3493209676)
 
-	c := obfu.Obfus(m)
+	c := obfu.Encode(m)
 
 	if c != 0x6da27100 {
 		t.Errorf("id obfuscate failed: got %x expected 0x6da27100", c)
 	}
 
-	p := obfu.Unobfus(c)
+	p := obfu.Decode(c)
 
 	if p != 3493209676 {
 		t.Errorf("id unobfuscate failed: got %x expected 3493209676", c)

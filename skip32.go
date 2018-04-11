@@ -109,8 +109,8 @@ func New(key []byte) (*Skip32, error) {
 
 }
 
-// Obfus obfuscates a uint32
-func (s *Skip32) Obfus(id uint32) uint32 {
+// Encode encode a uint32
+func (s *Skip32) Encode(id uint32) uint32 {
 
 	var buf [4]byte
 
@@ -126,8 +126,8 @@ func (s *Skip32) Obfus(id uint32) uint32 {
 	return j
 }
 
-// Unobfus unobfuscates an uint32
-func (s *Skip32) Unobfus(id uint32) uint32 {
+// Decode decode an uint32
+func (s *Skip32) Decode(id uint32) uint32 {
 
 	var buf [4]byte
 
